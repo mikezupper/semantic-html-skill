@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>The Semantic HTML Vocabulary — A Self-Demonstrating Field Guide</title>
+  <meta name="description" content="A single CSS-free page that demonstrates every modern semantic HTML element of 2026 in live use, from landmarks to ruby annotations to declarative popovers.">
+  <link rel="canonical" href="https://html-tags.com/demo.html">
+  <link rel="alternate" hreflang="en" href="https://html-tags.com/demo.html">
+  <link rel="alternate" hreflang="x-default" href="https://html-tags.com/demo.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="The Semantic HTML Vocabulary — A Field Guide">
+  <meta property="og:description" content="Every modern semantic HTML element of 2026, demonstrated live on one CSS-free page.">
+  <meta property="og:url" content="https://html-tags.com/demo.html">
+  <meta name="twitter:card" content="summary">
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "TechArticle",
+    "headline": "The Semantic HTML Vocabulary — A Self-Demonstrating Field Guide",
+    "datePublished": "2026-07-22",
+    "author": { "@type": "Person", "name": "Field Guide Editors" } }
+  </script>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+
+  <header>
+    <p><span translate="no">Field Guide</span></p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="#main" aria-current="page">Field guide</a></li>
+        <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Elements" rel="external">MDN element reference</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Table of contents">
+      <h2>On this page</h2>
+      <ol>
+        <li><a href="#text-semantics">Inline text semantics</a></li>
+        <li><a href="#grouping">Grouping and lists</a></li>
+        <li><a href="#quotes-edits">Quotations and edits</a></li>
+        <li><a href="#i18n">Internationalization elements</a></li>
+        <li><a href="#tables">Tabular data</a></li>
+        <li><a href="#media">Media and embedded content</a></li>
+        <li><a href="#forms">Forms</a></li>
+        <li><a href="#interactive">JS-free interactivity</a></li>
+        <li><a href="#frontier">Frontier elements (code only)</a></li>
+      </ol>
+    </nav>
+    <search>
+      <form action="https://developer.mozilla.org/en-US/search" method="get">
+        <label for="q">Search MDN for an element</label>
+        <input type="search" id="q" name="q" placeholder="e.g. hgroup">
+        <button type="submit">Search</button>
+      </form>
+    </search>
+  </header>
+
+  <main id="main">
+    <article>
+      <header>
+        <hgroup>
+          <h1>The Semantic HTML Vocabulary</h1>
+          <p>A self-demonstrating field guide — every element on this page is its own example</p>
+        </hgroup>
+        <p>Published <time datetime="2026-07-22">July 22, 2026</time> ·
+           Reading time <time datetime="PT12M">about 12 minutes</time> ·
+           Filed under <a href="#" rel="tag">HTML</a></p>
+      </header>
+
+      <p>This document is written under one rule: <strong>no CSS, no presentational
+      JavaScript</strong>. What your browser renders is its default stylesheet applied to
+      honest markup. Turn on a screen reader, or open the accessibility tree in devtools
+      — the structure you hear is the structure you see, because the page
+      <em>is</em> its structure.</p>
+
+      <hr>
+
+      <section id="text-semantics" aria-labelledby="text-semantics-h">
+        <h2 id="text-semantics-h">Inline text semantics</h2>
+
+        <p>The words you are reading sit inside a <code>&lt;p&gt;</code>. When a phrase
+        carries stress that changes meaning, it takes <em>emphasis</em>; when it carries
+        weight, it is <strong>strongly important</strong>. A keyword merely
+        <b>drawn to your attention</b> uses <code>&lt;b&gt;</code>, and text in an
+        alternate voice — like the taxonomic name <i>Homo sapiens</i> — uses
+        <code>&lt;i&gt;</code>.</p>
+
+        <p>A term being defined, such as <dfn id="def-semantics">semantics</dfn> (the
+        meaning of markup, as opposed to its appearance), is a <code>&lt;dfn&gt;</code>.
+        Abbreviations expand on hover: the <abbr title="World Wide Web Consortium">W3C</abbr>
+        and the <abbr title="Web Hypertext Application Technology Working Group">WHATWG</abbr>
+        maintain the specs. Titles of works take <code>&lt;cite&gt;</code>:
+        <cite>HTML: The Living Standard</cite>.</p>
+
+        <p>Computer-speak has four distinct elements. Source fragments use
+        <code>document.querySelector()</code>. Variables and placeholders use
+        <var>elementName</var>. Program output uses <samp>Document is valid. 0 errors.</samp>
+        Keyboard input uses <kbd><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>I</kbd></kbd> —
+        note the nested <code>&lt;kbd&gt;</code> per key.</p>
+
+        <p>Machine-readable values: the product <data value="SKU-2026-0042">Field Guide,
+        second edition</data> ships on <time datetime="2026-09-01">September 1</time>.
+        Search engines read the <code>value</code> and <code>datetime</code> attributes;
+        humans read the prose. A search hit would be <mark>highlighted like this</mark>.
+        Fine print is set with <small>terms and conditions apply</small>, chemistry with
+        H<sub>2</sub>O, math with E = mc<sup>2</sup>, and a price that no longer applies
+        is struck: <s>$49.00</s> now <data value="29.00">$29.00</data>.</p>
+
+        <p>Long unbroken tokens accept break opportunities with <code>&lt;wbr&gt;</code>:
+        <code>https://html-tags.com/<wbr>guides/<wbr>semantic-html/<wbr>field-guide</code>.
+        A proper-noun mark in Chinese uses <code>&lt;u&gt;</code>, its only good use:
+        <span lang="zh-Hans"><u>北京</u>是中国的首都。</span></p>
+      </section>
+
+      <section id="grouping" aria-labelledby="grouping-h">
+        <h2 id="grouping-h">Grouping and lists</h2>
+
+        <h3>The three list families</h3>
+        <p>Ordered steps (<code>&lt;ol&gt;</code>, here counting down with
+        <code>reversed</code>):</p>
+        <ol reversed>
+          <li>Validate the document</li>
+          <li>Check the accessibility tree</li>
+          <li>Write the markup</li>
+        </ol>
+
+        <p>An unordered set (<code>&lt;ul&gt;</code>) with a nested list:</p>
+        <ul>
+          <li>Sectioning elements
+            <ul>
+              <li><code>&lt;article&gt;</code></li>
+              <li><code>&lt;section&gt;</code></li>
+            </ul>
+          </li>
+          <li>Landmark elements</li>
+        </ul>
+
+        <p>A toolbar of commands is a <code>&lt;menu&gt;</code>:</p>
+        <menu>
+          <li><a href="#main">Top</a></li>
+          <li><a href="#frontier">Last section</a></li>
+        </menu>
+
+        <h3>Name–value pairs</h3>
+        <dl>
+          <dt>Element</dt>
+          <dd><code>&lt;dl&gt;</code></dd>
+          <dt>Purpose</dt>
+          <dd>Glossaries, metadata blocks, spec sheets, FAQs</dd>
+          <dt>Children</dt>
+          <dd><code>&lt;dt&gt;</code> terms and <code>&lt;dd&gt;</code> descriptions</dd>
+        </dl>
+
+        <h3>Self-contained referenced content</h3>
+        <figure>
+          <pre><code>&lt;figure&gt;
+  &lt;pre&gt;&lt;code&gt;…a code listing…&lt;/code&gt;&lt;/pre&gt;
+  &lt;figcaption&gt;Figure 1 — captions belong to figures&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+          <figcaption>Figure 1 — a <code>&lt;figure&gt;</code> holding a code listing,
+          demonstrating itself.</figcaption>
+        </figure>
+
+        <h3>Outline depth</h3>
+        <p>Headings reach six levels. The level is chosen by position in the outline,
+        never by desired size:</p>
+        <h4>Level four — a sub-topic</h4>
+        <p>Reached from a level-three subsection, one step at a time.</p>
+        <h5>Level five — a fine-grained point</h5>
+        <p>Rare in practice; a hint the document is deeply structured.</p>
+        <h6>Level six — the deepest rung</h6>
+        <p>If you find yourself wanting a seventh level, restructure the document
+        instead.</p>
+
+        <h3>Line breaks as content</h3>
+        <p>Poetry keeps its line breaks as content, with <code>&lt;br&gt;</code>:</p>
+        <p lang="en">Markup is meaning,<br>
+        styling is skin;<br>
+        strip off the stylesheet —<br>
+        the truth is within.</p>
+      </section>
+
+      <section id="quotes-edits" aria-labelledby="quotes-edits-h">
+        <h2 id="quotes-edits-h">Quotations and edits</h2>
+
+        <p>Inline quotation marks come from the browser, localized by <code>lang</code>:
+        the spec says a section is <q cite="https://html.spec.whatwg.org/">a thematic
+        grouping of content, typically with a heading</q>.</p>
+
+        <figure>
+          <blockquote cite="https://developer.mozilla.org/en-US/curriculum/core/semantic-html/">
+            <p>Semantic HTML provides a solid foundation on which all other web
+            technologies are built.</p>
+          </blockquote>
+          <figcaption>— <cite>MDN Core Curriculum: Semantic HTML</cite></figcaption>
+        </figure>
+
+        <p>Tracked changes: the deadline moved from
+        <del datetime="2026-07-01">July 1</del> to
+        <ins datetime="2026-07-15">July 15</ins>.</p>
+      </section>
+
+      <section id="i18n" aria-labelledby="i18n-h">
+        <h2 id="i18n-h">Internationalization elements</h2>
+
+        <p>Every language switch is marked. She whispered
+        <i lang="fr">c'est la vie</i> and moved on. A German proverb:
+        <q lang="de">Übung macht den Meister</q> — notice the quotation marks change
+        with the language.</p>
+
+        <p>East Asian pronunciation uses ruby annotations with parenthesis fallback:
+        <ruby lang="ja">東<rp>(</rp><rt>とう</rt><rp>)</rp>京<rp>(</rp><rt>きょう</rt><rp>)</rp></ruby>
+        (Tokyo).</p>
+
+        <p>Bidirectional isolation protects layout from unknown-direction text. Top
+        contributors: <bdi>אורי</bdi> — 12 edits, <bdi>سارة</bdi> — 9 edits,
+        <bdi>Åsa</bdi> — 7 edits. Without <code>&lt;bdi&gt;</code>, the numbers can
+        visually attach to the wrong name. A forced override:
+        <bdo dir="rtl">this sentence renders right-to-left</bdo>.</p>
+
+        <p>Do-not-translate spans use the <code>translate</code> attribute: the project
+        is called <span translate="no">Field Guide</span> in every locale.</p>
+      </section>
+
+      <section id="tables" aria-labelledby="tables-h">
+        <h2 id="tables-h">Tabular data</h2>
+
+        <table>
+          <caption>Semantic elements added to HTML, by era</caption>
+          <colgroup>
+            <col>
+            <col span="2">
+          </colgroup>
+          <thead>
+            <tr>
+              <th scope="col">Era</th>
+              <th scope="col">Representative elements</th>
+              <th scope="col">Count shown</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">HTML5 (2008–2014)</th>
+              <td><code>article</code>, <code>nav</code>, <code>time</code>, <code>figure</code></td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th scope="row">Living Standard (2015–2022)</th>
+              <td><code>dialog</code>, <code>details</code>, <code>picture</code>, <code>slot</code></td>
+              <td>4</td>
+            </tr>
+            <tr>
+              <th scope="row">Modern era (2023–2026)</th>
+              <td><code>search</code>, <code>selectedcontent</code>, <code>geolocation</code>, <code>fencedframe</code></td>
+              <td>4</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <th scope="row">Total</th>
+              <td></td>
+              <td>12</td>
+            </tr>
+          </tfoot>
+        </table>
+      </section>
+
+      <section id="media" aria-labelledby="media-h">
+        <h2 id="media-h">Media and embedded content</h2>
+
+        <figure>
+          <picture>
+            <source type="image/svg+xml"
+              srcset="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='160'%20height='100'%3E%3Crect%20width='160'%20height='100'%20fill='%23d8e4f0'/%3E%3Ccircle%20cx='80'%20cy='50'%20r='32'%20fill='%23335577'/%3E%3C/svg%3E">
+            <img
+              src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='160'%20height='100'%3E%3Crect%20width='160'%20height='100'%20fill='%23d8e4f0'/%3E%3Ccircle%20cx='80'%20cy='50'%20r='32'%20fill='%23335577'/%3E%3C/svg%3E"
+              alt="A dark blue circle centered on a pale blue field"
+              width="160" height="100" loading="lazy" decoding="async"
+              usemap="#circle-map">
+          </picture>
+          <figcaption>Figure 2 — <code>&lt;picture&gt;</code> negotiating format, with an
+          image map: the circle itself is a clickable <code>&lt;area&gt;</code>.</figcaption>
+        </figure>
+        <map name="circle-map">
+          <area shape="circle" coords="80,50,32" href="#media" alt="The circle — links back to this section">
+        </map>
+
+        <figure>
+          <svg xmlns="http://www.w3.org/2000/svg" width="160" height="60" viewBox="0 0 160 60" role="img" aria-labelledby="svg-title">
+            <title id="svg-title">Three ascending bars representing structure, semantics, and meaning</title>
+            <rect x="10" y="35" width="30" height="20"></rect>
+            <rect x="60" y="20" width="30" height="35"></rect>
+            <rect x="110" y="5" width="30" height="50"></rect>
+          </svg>
+          <figcaption>Figure 3 — inline <code>&lt;svg&gt;</code> with
+          <code>role="img"</code> and an internal <code>&lt;title&gt;</code>.</figcaption>
+        </figure>
+
+        <figure>
+          <math display="block">
+            <mrow>
+              <mi>x</mi><mo>=</mo>
+              <mfrac>
+                <mrow><mo>−</mo><mi>b</mi><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mn>4</mn><mi>a</mi><mi>c</mi></mrow></msqrt></mrow>
+                <mrow><mn>2</mn><mi>a</mi></mrow>
+              </mfrac>
+            </mrow>
+          </math>
+          <figcaption>Figure 4 — the quadratic formula in native
+          <code>&lt;math&gt;</code> (MathML Core).</figcaption>
+        </figure>
+
+        <p>Audio and video players with caption tracks (sources are placeholders —
+        the markup is the demonstration):</p>
+        <video controls width="320" height="180" preload="none">
+          <source src="media/field-guide-intro.webm" type="video/webm">
+          <source src="media/field-guide-intro.mp4" type="video/mp4">
+          <track kind="captions" src="media/field-guide-intro.en.vtt" srclang="en" label="English" default>
+          Your browser does not support video. <a href="media/field-guide-intro.mp4">Download the introduction</a>.
+        </video>
+        <audio controls preload="none">
+          <source src="media/field-guide-audio.ogg" type="audio/ogg">
+          Your browser does not support audio. <a href="media/field-guide-audio.ogg">Download the recording</a>.
+        </audio>
+        <details>
+          <summary>Transcript</summary>
+          <p>Welcome to the field guide. In this recording we walk the document tree
+          from root to leaf…</p>
+        </details>
+
+        <p>An embedded document via <code>&lt;iframe srcdoc&gt;</code>:</p>
+        <iframe title="A minimal embedded HTML document" loading="lazy" width="320" height="80"
+          srcdoc="&lt;p lang='en'&gt;Hello from a nested browsing context.&lt;/p&gt;"></iframe>
+      </section>
+
+      <section id="forms" aria-labelledby="forms-h">
+        <h2 id="forms-h">Forms</h2>
+
+        <form action="https://example.com/subscribe" method="get">
+          <fieldset>
+            <legend>Contact details</legend>
+            <p>
+              <label for="name">Full name</label>
+              <input type="text" id="name" name="name" required autocomplete="name">
+            </p>
+            <p>
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required autocomplete="email"
+                     aria-describedby="email-hint">
+              <small id="email-hint">We send one issue per month. No tracking pixels.</small>
+            </p>
+            <p>
+              <label for="site">Your website</label>
+              <input type="url" id="site" name="site" autocomplete="url">
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Preferred edition</legend>
+            <p>
+              <input type="radio" id="ed-text" name="edition" value="text" checked>
+              <label for="ed-text">Plain text</label>
+            </p>
+            <p>
+              <input type="radio" id="ed-html" name="edition" value="html">
+              <label for="ed-html">Semantic HTML, naturally</label>
+            </p>
+          </fieldset>
+
+          <fieldset>
+            <legend>Typed inputs, richer widgets</legend>
+            <p>
+              <label for="start">Start date</label>
+              <input type="date" id="start" name="start" min="2026-01-01">
+            </p>
+            <p>
+              <label for="depth">Reading depth (1–10)</label>
+              <input type="range" id="depth" name="depth" min="1" max="10" step="1" value="7">
+            </p>
+            <p>
+              <label for="topic">Favorite element</label>
+              <input type="text" id="topic" name="topic" list="elements">
+              <datalist id="elements">
+                <option value="hgroup"></option>
+                <option value="search"></option>
+                <option value="ruby"></option>
+                <option value="output"></option>
+              </datalist>
+            </p>
+            <p>
+              <label for="tier">Membership tier</label>
+              <select id="tier" name="tier">
+                <optgroup label="Free">
+                  <option value="reader">Reader</option>
+                </optgroup>
+                <optgroup label="Paid">
+                  <option value="supporter">Supporter</option>
+                  <option value="patron">Patron</option>
+                </optgroup>
+              </select>
+            </p>
+            <p>
+              <label for="notes">Notes</label>
+              <textarea id="notes" name="notes" rows="3" cols="40" maxlength="500"></textarea>
+            </p>
+          </fieldset>
+
+          <p><button type="submit">Subscribe</button> <button type="reset">Clear</button></p>
+        </form>
+
+        <h3>Gauges, progress, and results</h3>
+        <p>
+          <label for="disk">Vocabulary coverage on this page:</label>
+          <meter id="disk" min="0" max="112" low="40" high="90" optimum="112" value="104">104 of 112 elements</meter>
+        </p>
+        <p>
+          <label for="load">Guide completion:</label>
+          <progress id="load" max="9" value="8">8 of 9 sections</progress>
+        </p>
+        <p>Sum of 6 and 36 is <output>42</output> — <code>&lt;output&gt;</code> marks a
+        result even when computed at authoring time.</p>
+      </section>
+
+      <section id="interactive" aria-labelledby="interactive-h">
+        <h2 id="interactive-h">JS-free interactivity</h2>
+
+        <h3>Exclusive accordion — <code>&lt;details name&gt;</code></h3>
+        <details name="faq" open>
+          <summary>Why no CSS at all?</summary>
+          <p>To prove the structure stands on its own. Default browser styling is the
+          shared baseline every user agent — visual or not — understands.</p>
+        </details>
+        <details name="faq">
+          <summary>Why does opening this close the other?</summary>
+          <p>Both <code>&lt;details&gt;</code> share <code>name="faq"</code>, which makes
+          them a mutually exclusive group. No script involved.</p>
+        </details>
+
+        <h3>Declarative popover</h3>
+        <p>
+          <button type="button" popovertarget="gloss">What does “Baseline” mean?</button>
+        </p>
+        <div id="gloss" popover>
+          <p><dfn>Baseline</dfn>: a feature supported in the current and previous
+          versions of all major browsers. Press <kbd>Esc</kbd> or click outside to
+          dismiss — the browser handles it.</p>
+        </div>
+
+        <h3>Non-modal dialog</h3>
+        <dialog open>
+          <p>A <code>&lt;dialog open&gt;</code> renders without any script. Modal
+          behavior (<code>showModal()</code>) needs JavaScript, so this one is
+          non-modal.</p>
+          <form method="dialog">
+            <button>Dismiss</button>
+          </form>
+        </dialog>
+      </section>
+
+      <section id="frontier" aria-labelledby="frontier-h">
+        <h2 id="frontier-h">Frontier elements — shown as code, not run</h2>
+        <p>Three 2026 elements are experimental (Chromium-first, not Baseline) and
+        require JavaScript, so a static page demonstrates them as listings.</p>
+
+        <figure>
+          <pre><code>&lt;geolocation watch&gt;
+  &lt;button id="geo-fallback" type="button"&gt;Use my location&lt;/button&gt;
+&lt;/geolocation&gt;
+
+&lt;script&gt;
+  const geo = document.querySelector("geolocation");
+  geo.addEventListener("location", () =&gt; {
+    if (geo.position) console.log(geo.position.coords);
+  });
+&lt;/script&gt;</code></pre>
+          <figcaption>Listing 1 — <code>&lt;geolocation&gt;</code>: the browser owns the
+          permission UI; your code listens for the <code>location</code> event.</figcaption>
+        </figure>
+
+        <figure>
+          <pre><code>&lt;select&gt;
+  &lt;button&gt;
+    &lt;selectedcontent&gt;&lt;/selectedcontent&gt;
+  &lt;/button&gt;
+  &lt;option&gt;🍎 Apple&lt;/option&gt;
+  &lt;option&gt;🍊 Orange&lt;/option&gt;
+&lt;/select&gt;
+&lt;!-- Activates only with CSS: select { appearance: base-select; } --&gt;</code></pre>
+          <figcaption>Listing 2 — <code>&lt;selectedcontent&gt;</code> mirrors the chosen
+          option into the closed select’s button.</figcaption>
+        </figure>
+
+        <figure>
+          <pre><code>&lt;fencedframe id="ad-slot" width="640" height="320"
+  title="Advertisement, selected privately"&gt;&lt;/fencedframe&gt;
+
+&lt;script&gt;
+  const config = await navigator.runAdAuction({
+    seller: "https://ssp.example",
+    decisionLogicUrl: "https://ssp.example/decision-logic.js",
+    interestGroupBuyers: ["https://dsp-a.example"],
+    resolveToConfig: true,
+  });
+  document.querySelector("#ad-slot").config = config;
+&lt;/script&gt;</code></pre>
+          <figcaption>Listing 3 — <code>&lt;fencedframe&gt;</code>: the embedder can load
+          the winning ad but can never learn its URL.</figcaption>
+        </figure>
+      </section>
+
+      <footer>
+        <p>Corrections? File them against the guide — descriptive link text, always:
+        <a href="https://github.com/mikezupper/semantic-html-skill/issues">report an issue with the field
+        guide</a>.</p>
+      </footer>
+    </article>
+
+    <aside aria-labelledby="aside-h">
+      <h2 id="aside-h">Elements deliberately absent</h2>
+      <p><code>&lt;template&gt;</code>, <code>&lt;slot&gt;</code>,
+      <code>&lt;canvas&gt;</code>, and <code>&lt;noscript&gt;</code> serve scripts;
+      <code>&lt;base&gt;</code> rewrites every relative URL on the page (breaking
+      fragment links like the skip link); <code>&lt;object&gt;</code> and
+      <code>&lt;embed&gt;</code> exist for legacy plugin content that
+      <code>&lt;iframe&gt;</code>, <code>&lt;video&gt;</code>, and
+      <code>&lt;img&gt;</code> replaced — all omitted by design from a static
+      document. Deprecated elements
+      (<code>&lt;center&gt;</code>, <code>&lt;font&gt;</code>,
+      <code>&lt;marquee&gt;</code>…) are absent because they are wrong, not because they
+      are old.</p>
+    </aside>
+  </main>
+
+  <footer>
+    <address>
+      Field Guide Editors ·
+      <a href="mailto:editors@html-tags.com">editors@html-tags.com</a>
+    </address>
+    <p><small>© <time datetime="2026">2026</time> <span translate="no">Field Guide</span>.
+    Text licensed under <a href="https://creativecommons.org/licenses/by/4.0/" rel="license">CC BY 4.0</a>.</small></p>
+  </footer>
+</body>
+</html>

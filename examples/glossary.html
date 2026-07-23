@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Glossary of Web Platform Terms</title>
+  <meta name="description" content="A cross-referenced glossary demonstrating definition lists, the dfn element, abbreviations, and fragment-link cross-references.">
+  <link rel="canonical" href="https://html-tags.com/examples/glossary.html">
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+  <header>
+    <p><span translate="no">Field Guide</span> Glossary</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">All examples</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Glossary sections">
+      <ul>
+        <li><a href="#letter-a">A</a></li>
+        <li><a href="#letter-b">B</a></li>
+        <li><a href="#letter-c">C</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header>
+        <h1>Glossary of Web Platform Terms</h1>
+        <p>Each entry's first mention is its <code>&lt;dfn&gt;</code> — the defining
+        instance — with an <code>id</code> so other entries can cross-reference it.</p>
+      </header>
+
+      <section id="letter-a" aria-labelledby="letter-a-h">
+        <h2 id="letter-a-h">A</h2>
+        <dl>
+          <dt><dfn id="def-aria"><abbr title="Accessible Rich Internet Applications">ARIA</abbr></dfn></dt>
+          <dd>A set of attributes that supplement HTML semantics for assistive
+          technology. The first rule of <a href="#def-aria">ARIA</a>: prefer native
+          elements — a <code>&lt;button&gt;</code> over <code>role="button"</code>.</dd>
+
+          <dt><dfn id="def-accessibility-tree">accessibility tree</dfn></dt>
+          <dd>The browser's parallel representation of the page that screen readers
+          consume, built from element semantics, labels, and
+          <a href="#def-aria">ARIA</a> attributes rather than visual layout.</dd>
+        </dl>
+      </section>
+
+      <section id="letter-b" aria-labelledby="letter-b-h">
+        <h2 id="letter-b-h">B</h2>
+        <dl>
+          <dt><dfn id="def-baseline">Baseline</dfn></dt>
+          <dd>A support status: a feature available in the current and previous
+          versions of every major browser. Features outside
+          <a href="#def-baseline">Baseline</a> need fallbacks or feature detection.</dd>
+
+          <dt><dfn id="def-bidi">bidirectional text</dfn> (bidi)</dt>
+          <dd>Text mixing left-to-right and right-to-left scripts. HTML controls it
+          with the <code>dir</code> attribute and the <code>&lt;bdi&gt;</code>
+          element, which isolates runs of unknown direction.</dd>
+        </dl>
+      </section>
+
+      <section id="letter-c" aria-labelledby="letter-c-h">
+        <h2 id="letter-c-h">C</h2>
+        <dl>
+          <dt><dfn id="def-content-model">content model</dfn></dt>
+          <dd>The specification of what children each element permits — flow,
+          phrasing, sectioning, and so on. Violating the
+          <a href="#def-content-model">content model</a> (a list item outside a list,
+          block content inside a paragraph) makes a document invalid.</dd>
+
+          <dt><dfn id="def-cdn"><abbr title="Content Delivery Network">CDN</abbr></dfn></dt>
+          <dd>Geographically distributed servers that cache content close to users,
+          cutting latency. Complements — never replaces — small, valid markup.</dd>
+
+          <dt><dfn id="def-canonical">canonical <abbr title="Uniform Resource Locator">URL</abbr></dfn></dt>
+          <dd>The authoritative address of a page, declared with
+          <code>&lt;link rel="canonical"&gt;</code> so search engines fold duplicate
+          routes into one ranking signal.</dd>
+        </dl>
+      </section>
+
+      <footer>
+        <p>Missing a term? <a href="mailto:glossary@html-tags.com">Suggest an entry</a>.</p>
+      </footer>
+    </article>
+  </main>
+  <footer>
+    <p><small>© <time datetime="2026">2026</time> Field Guide.
+    Back to <a href="index.html">all examples</a>.</small></p>
+  </footer>
+</body>
+</html>

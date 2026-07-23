@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Small Anthology of World Poetry</title>
+  <meta name="description" content="A multilingual anthology demonstrating lang switches, right-to-left text, ruby annotations, bidirectional isolation, and locale-aware quotation marks.">
+  <link rel="canonical" href="https://html-tags.com/examples/world-poetry.html">
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+  <header>
+    <p><span translate="no">Field Guide</span> Anthology</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">All examples</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header>
+        <h1>A Small Anthology of World Poetry</h1>
+        <p>Four scripts, three directions of care, one rule: every language switch is
+        marked with <code>lang</code>, so screen readers change pronunciation engines
+        mid-sentence.</p>
+      </header>
+
+      <section aria-labelledby="japanese-h">
+        <h2 id="japanese-h">Japanese — ruby annotations</h2>
+        <p>A haiku after Bashō. Furigana readings ride above the kanji via
+        <code>&lt;ruby&gt;</code>/<code>&lt;rt&gt;</code>, with
+        <code>&lt;rp&gt;</code> parentheses as the fallback for browsers without ruby
+        layout:</p>
+        <p lang="ja">
+          <ruby>古<rp>(</rp><rt>ふる</rt><rp>)</rp></ruby>い<ruby>池<rp>(</rp><rt>いけ</rt><rp>)</rp></ruby>や<br>
+          <ruby>蛙<rp>(</rp><rt>かわず</rt><rp>)</rp></ruby>とびこむ<br>
+          <ruby>水<rp>(</rp><rt>みず</rt><rp>)</rp></ruby>の<ruby>音<rp>(</rp><rt>おと</rt><rp>)</rp></ruby>
+        </p>
+        <p>An old pond — a frog leaps in — the sound of water.</p>
+      </section>
+
+      <section aria-labelledby="arabic-h">
+        <h2 id="arabic-h">Arabic — right-to-left flow</h2>
+        <p>The blockquote carries both <code>lang="ar"</code> and
+        <code>dir="rtl"</code>; direction is set on the container, not faked with
+        alignment:</p>
+        <figure>
+          <blockquote lang="ar" dir="rtl">
+            <p>الليلُ طويلٌ والقمرُ ساهرٌ<br>
+            والحرفُ يمشي في الورقِ نهرا</p>
+          </blockquote>
+          <figcaption>Anonymous couplet — <q>The night is long, the moon keeps watch,
+          and the letter runs through the page like a river.</q></figcaption>
+        </figure>
+      </section>
+
+      <section aria-labelledby="german-h">
+        <h2 id="german-h">German — locale-aware quotation</h2>
+        <p>The <code>&lt;q&gt;</code> element lets the browser choose quotation marks
+        by language — compare the German
+        <q lang="de">Übung macht den Meister</q> with the English
+        <q>practice makes perfect</q>: same element, different marks.</p>
+      </section>
+
+      <section aria-labelledby="bidi-h">
+        <h2 id="bidi-h">Bidirectional isolation</h2>
+        <p>Contributor names arrive in unknown scripts, so each is wrapped in
+        <code>&lt;bdi&gt;</code> — without it, the counts can visually attach to the
+        wrong name:</p>
+        <ul>
+          <li><bdi>אביגיל</bdi> — 4 translations</li>
+          <li><bdi>سلمى</bdi> — 3 translations</li>
+          <li><bdi>Márta</bdi> — 2 translations</li>
+        </ul>
+        <p>Explicit override, for demonstration only: <code>&lt;bdo&gt;</code> forces
+        <bdo dir="rtl">this English run to render backwards</bdo>.</p>
+      </section>
+
+      <section aria-labelledby="notes-h">
+        <h2 id="notes-h">Editorial notes</h2>
+        <p>The imprint name <span translate="no">Field Guide</span> is marked
+        <code>translate="no"</code> so machine translation leaves it alone. Foreign
+        phrases inside English prose take <code>&lt;i&gt;</code> with a
+        <code>lang</code>: the French call this small anthology
+        <i lang="fr">un florilège</i>.</p>
+      </section>
+
+      <footer>
+        <p>Translations © their contributors, collected
+        <time datetime="2026-07">July 2026</time>.</p>
+      </footer>
+    </article>
+  </main>
+  <footer>
+    <p><small>© <time datetime="2026">2026</time> Field Guide.
+    Back to <a href="index.html">all examples</a>.</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sx(1) — Manual Page</title>
+  <meta name="description" content="A Unix-style manual page demonstrating the four computer-text elements: code, kbd, samp, and var, plus pre blocks and option lists.">
+  <link rel="canonical" href="https://html-tags.com/examples/terminal-manual.html">
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+  <header>
+    <p><span translate="no">Field Guide</span> Manuals</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">All examples</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header>
+        <hgroup>
+          <h1><code>sx</code> — semantic export tool</h1>
+          <p>Section 1: user commands · version <data value="2.4.0">2.4.0</data></p>
+        </hgroup>
+      </header>
+
+      <section aria-labelledby="synopsis-h">
+        <h2 id="synopsis-h">Synopsis</h2>
+        <p>Placeholders you replace are <code>&lt;var&gt;</code>; literal command text
+        is <code>&lt;code&gt;</code>:</p>
+        <pre><code>sx [--format <var>fmt</var>] [--out <var>file</var>] <var>input</var>…</code></pre>
+      </section>
+
+      <section aria-labelledby="description-h">
+        <h2 id="description-h">Description</h2>
+        <p><code>sx</code> converts documents to validated semantic HTML. Given
+        <var>input</var> files, it writes to <var>file</var> or standard output.
+        A typical invocation:</p>
+        <pre><code>sx --format html --out guide.html chapter-*.md</code></pre>
+        <p>On success it prints a summary — program output is
+        <code>&lt;samp&gt;</code>:</p>
+        <pre><samp>3 files converted, 0 errors, 0 warnings
+guide.html written (41 kB)</samp></pre>
+        <p>Interrupt a long run with <kbd><kbd>Ctrl</kbd>+<kbd>C</kbd></kbd>; suspend
+        with <kbd><kbd>Ctrl</kbd>+<kbd>Z</kbd></kbd> and resume by typing
+        <kbd>fg</kbd>. Note the nesting: each physical key is its own
+        <code>&lt;kbd&gt;</code> inside the keystroke's <code>&lt;kbd&gt;</code>.</p>
+      </section>
+
+      <section aria-labelledby="options-h">
+        <h2 id="options-h">Options</h2>
+        <dl>
+          <dt><code>--format <var>fmt</var></code></dt>
+          <dd>Output format. One of <code>html</code>, <code>xhtml</code>, or
+          <code>fragment</code>. Defaults to <code>html</code>.</dd>
+          <dt><code>--out <var>file</var></code></dt>
+          <dd>Write to <var>file</var> instead of standard output.</dd>
+          <dt><code>--strict</code></dt>
+          <dd>Treat validator warnings as errors. Exit status
+          <data value="2">2</data> on any finding.</dd>
+          <dt><code>-q</code>, <code>--quiet</code></dt>
+          <dd>Suppress the summary line.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="exit-h">
+        <h2 id="exit-h">Exit status</h2>
+        <dl>
+          <dt><data value="0">0</data></dt>
+          <dd>Success.</dd>
+          <dt><data value="1">1</data></dt>
+          <dd>Usage error — the message goes to standard error, for example
+          <samp>sx: unknown option '--formt' (did you mean '--format'?)</samp>.</dd>
+          <dt><data value="2">2</data></dt>
+          <dd>Validation failed under <code>--strict</code>.</dd>
+        </dl>
+      </section>
+
+      <section aria-labelledby="env-h">
+        <h2 id="env-h">Environment</h2>
+        <p>The variable <var>SX_CACHE</var> overrides the cache directory. An
+        interactive session, mixing all four computer-text elements:</p>
+        <pre><code>$ SX_CACHE=/tmp/sx sx --strict draft.md</code>
+<samp>draft.md:12:3: warning: heading level skipped (h2 → h4)
+1 file converted, 0 errors, 1 warning
+sx: exiting 2 (--strict)</samp></pre>
+      </section>
+
+      <footer>
+        <p>Report bugs to <a href="mailto:bugs@html-tags.com">bugs@html-tags.com</a>.
+        See also <cite>The Field Guide to Semantic HTML</cite>.</p>
+      </footer>
+    </article>
+  </main>
+  <footer>
+    <p><small>© <time datetime="2026">2026</time> Field Guide.
+    Back to <a href="index.html">all examples</a>.</small></p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sx Release Notes</title>
+  <meta name="description" content="A changelog demonstrating edit-tracking markup: ins and del with datetime, s for superseded facts, reversed ordered lists, and hgroup version headings.">
+  <link rel="canonical" href="https://html-tags.com/examples/release-notes.html">
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+  <header>
+    <p><span translate="no">Field Guide</span> Releases</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">All examples</a></li>
+        <li><a href="terminal-manual.html">sx manual</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article>
+      <header>
+        <h1><code>sx</code> release notes</h1>
+        <p>Newest first — the release list is an <code>&lt;ol reversed&gt;</code>, so
+        the numbering counts down and machines still know the true order. Edits to
+        published notes stay visible as <code>&lt;ins&gt;</code> and
+        <code>&lt;del&gt;</code>, each stamped with a <code>datetime</code>.</p>
+      </header>
+
+      <ol reversed>
+        <li>
+          <article aria-labelledby="v240-h">
+            <header>
+              <hgroup>
+                <h2 id="v240-h">Version <data value="2.4.0">2.4.0</data></h2>
+                <p>codename <span translate="no">Hgroup Therapy</span></p>
+              </hgroup>
+              <p>Released <time datetime="2026-07-20">July 20, 2026</time></p>
+            </header>
+            <ul>
+              <li>New <code>--strict</code> flag: validator warnings become errors.</li>
+              <li>
+                <del datetime="2026-07-22" cite="https://html-tags.com/issues/812">Ruby
+                annotation output is enabled by default.</del>
+                <ins datetime="2026-07-22" cite="https://html-tags.com/issues/812">Ruby
+                annotation output is opt-in via <code>--ruby</code> — default output
+                was breaking plain-text diffs.</ins>
+              </li>
+              <li>Conversion is now <s>twice</s> three times as fast on large books —
+              the earlier claim measured only the warm cache.</li>
+            </ul>
+          </article>
+        </li>
+        <li>
+          <article aria-labelledby="v230-h">
+            <header>
+              <hgroup>
+                <h2 id="v230-h">Version <data value="2.3.0">2.3.0</data></h2>
+                <p>codename <span translate="no">Search Party</span></p>
+              </hgroup>
+              <p>Released <time datetime="2026-05-04">May 4, 2026</time></p>
+            </header>
+            <ul>
+              <li>Emit <code>&lt;search&gt;</code> for detected search forms.</li>
+              <li>Exclusive accordions: consecutive FAQs get
+              <code>&lt;details name&gt;</code> groups.</li>
+              <li><ins datetime="2026-05-06">Erratum: the minimum supported Java
+              version for the bundled validator is 11, not 8.</ins></li>
+            </ul>
+          </article>
+        </li>
+        <li>
+          <article aria-labelledby="v220-h">
+            <header>
+              <hgroup>
+                <h2 id="v220-h">Version <data value="2.2.0">2.2.0</data></h2>
+                <p>codename <span translate="no">Time and Data</span></p>
+              </hgroup>
+              <p>Released <time datetime="2026-02-11">February 11, 2026</time></p>
+            </header>
+            <ul>
+              <li>Dates and durations in prose are wrapped in
+              <code>&lt;time datetime&gt;</code> automatically.</li>
+              <li>Quantities with units become <code>&lt;data&gt;</code> elements.</li>
+            </ul>
+          </article>
+        </li>
+      </ol>
+
+      <section aria-labelledby="policy-h">
+        <h2 id="policy-h">Editing policy</h2>
+        <p>Published notes are never silently rewritten. Corrections appear as
+        <code>&lt;ins&gt;</code>/<code>&lt;del&gt;</code> pairs with a
+        <code>datetime</code> and, where one exists, a <code>cite</code> URL pointing
+        at the issue that prompted the change. A fact that merely became outdated —
+        not wrong — is struck with <code>&lt;s&gt;</code> and corrected in place.</p>
+      </section>
+
+      <footer>
+        <address>
+          Release manager: <a href="mailto:releases@html-tags.com">releases@html-tags.com</a>
+        </address>
+      </footer>
+    </article>
+  </main>
+  <footer>
+    <p><small>© <time datetime="2026">2026</time> Field Guide.
+    Back to <a href="index.html">all examples</a>.</small></p>
+  </footer>
+</body>
+</html>

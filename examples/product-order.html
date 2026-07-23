@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Order — The Field Guide, Print Edition</title>
+  <meta name="description" content="A product order page demonstrating rich form markup — fieldsets, typed inputs, datalist, meter, output — and schema.org microdata as the attribute-level alternative to JSON-LD.">
+  <link rel="canonical" href="https://html-tags.com/examples/product-order.html">
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+  <header>
+    <p><span translate="no">Field Guide</span> Shop</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">All examples</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="main">
+    <article itemscope itemtype="https://schema.org/Product">
+      <header>
+        <h1 itemprop="name">The Field Guide — Print Edition</h1>
+        <p itemprop="description">All 113 living elements on paper: the skill, the
+        demo, and the examples, sewn-bound and margin-noted. This page uses
+        <strong>microdata</strong> (<code>itemscope</code>/<code>itemprop</code>)
+        instead of JSON-LD — the attribute-level way to say the same thing.</p>
+      </header>
+
+      <dl>
+        <dt>SKU</dt>
+        <dd><data itemprop="sku" value="FG-PRINT-2026">FG‑PRINT‑2026</data></dd>
+        <dt>Price</dt>
+        <dd itemprop="offers" itemscope itemtype="https://schema.org/Offer">
+          <data itemprop="price" value="29.00">$29.00</data>
+          <meta itemprop="priceCurrency" content="USD">
+          <link itemprop="availability" href="https://schema.org/InStock">
+          — in stock
+        </dd>
+        <dt>Stock level</dt>
+        <dd>
+          <meter min="0" max="500" low="50" high="400" optimum="500" value="132">
+            132 of 500 copies remaining
+          </meter>
+          (running low is under 50)
+        </dd>
+        <dt>Print run progress</dt>
+        <dd><progress max="500" value="500">500 of 500 printed</progress> — second
+        printing complete</dd>
+      </dl>
+
+      <form action="https://html-tags.com/checkout" method="get">
+        <fieldset>
+          <legend>Your copy</legend>
+          <p>
+            <label for="qty">Quantity</label>
+            <input type="number" id="qty" name="qty" min="1" max="10" step="1"
+                   value="1" required aria-describedby="qty-hint">
+            <small id="qty-hint">Orders of more than 10 copies: email the shop.</small>
+          </p>
+          <p>
+            <label for="edition">Edition</label>
+            <select id="edition" name="edition">
+              <optgroup label="Available now">
+                <option value="cloth" selected>Clothbound</option>
+                <option value="paper">Paperback</option>
+              </optgroup>
+              <optgroup label="Pre-order">
+                <option value="pocket">Pocket reference</option>
+              </optgroup>
+            </select>
+          </p>
+          <p>
+            <label for="dedication">Dedication page name (optional)</label>
+            <input type="text" id="dedication" name="dedication" maxlength="40"
+                   list="dedication-ideas">
+            <datalist id="dedication-ideas">
+              <option value="To the reader"></option>
+              <option value="For the next maintainer"></option>
+              <option value="RTFM, with love"></option>
+            </datalist>
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Delivery details</legend>
+          <p>
+            <label for="name">Full name</label>
+            <input type="text" id="name" name="name" required autocomplete="name">
+          </p>
+          <p>
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email">
+          </p>
+          <p>
+            <label for="postal">Postal code</label>
+            <input type="text" id="postal" name="postal" required
+                   autocomplete="postal-code" inputmode="numeric">
+          </p>
+          <p>
+            <label for="ship-date">Earliest shipping date</label>
+            <input type="date" id="ship-date" name="ship-date" min="2026-07-28">
+          </p>
+        </fieldset>
+
+        <fieldset>
+          <legend>Gift options</legend>
+          <p>
+            <input type="checkbox" id="gift" name="gift" value="yes">
+            <label for="gift">This is a gift — omit the invoice</label>
+          </p>
+        </fieldset>
+
+        <p>Order total for one clothbound copy: <output for="qty edition">$29.00</output>
+        — <code>&lt;output&gt;</code> names the calculation's result; its
+        <code>for</code> attribute lists the inputs it derives from.</p>
+
+        <p><button type="submit">Proceed to checkout</button>
+           <button type="reset">Start over</button></p>
+      </form>
+
+      <footer>
+        <p>Questions before ordering?
+        <a href="mailto:shop@html-tags.com">shop@html-tags.com</a></p>
+      </footer>
+    </article>
+  </main>
+  <footer>
+    <p><small>© <time datetime="2026">2026</time> Field Guide Shop.
+    Back to <a href="index.html">all examples</a>.</small></p>
+  </footer>
+</body>
+</html>

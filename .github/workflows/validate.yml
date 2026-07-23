@@ -1,0 +1,53 @@
+name: Validate HTML
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  nu-validate:
+    name: Nu HTML Checker (0 errors, 0 warnings)
+    runs-on: ubuntu-latest
+    services:
+      vnu:
+        image: ghcr.io/validator/validator:latest
+        ports:
+          - 8888:8888
+    steps:
+      - uses: actions/checkout@v5
+
+      - name: Wait for the checker to come up
+        run: |
+          probe='<!doctype html><html lang="en"><head><title>probe</title></head><body><p>ok</p></body></html>'
+          for i in $(seq 1 30); do
+            if curl -fs -H "Content-Type: text/html; charset=utf-8" \
+                 --data-binary "$probe" "http://localhost:8888/?out=json" >/dev/null; then
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Nu checker service did not become ready" >&2
+          exit 1
+
+      - name: Validate all HTML files (any message fails the build)
+        run: |
+          shopt -s globstar nullglob
+          status=0
+          for f in **/*.html; do
+            echo "== $f"
+            resp=$(curl -s -H "Content-Type: text/html; charset=utf-8" \
+                     --data-binary @"$f" "http://localhost:8888/?out=json")
+            echo "$resp" | jq -r '.messages[] | "\(.type): line \(.lastLine // "?"): \(.message)"'
+            count=$(echo "$resp" | jq '.messages | length')
+            if [ "$count" -eq 0 ]; then
+              echo "clean"
+            else
+              status=1
+            fi
+          done
+          exit $status

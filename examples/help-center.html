@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Help Center — Field Guide Support</title>
+  <meta name="description" content="A support page demonstrating script-free interactivity: the search element, exclusive details accordions, declarative popovers, a dialog, and mark.">
+  <link rel="canonical" href="https://html-tags.com/examples/help-center.html">
+  <script type="application/ld+json">
+  { "@context": "https://schema.org", "@type": "FAQPage",
+    "mainEntity": [
+      { "@type": "Question", "name": "Do I need an account to read the guides?",
+        "acceptedAnswer": { "@type": "Answer", "text": "No. Every guide is public. An account only stores your reading position." } },
+      { "@type": "Question", "name": "Can I download guides for offline use?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Yes — every guide is a single self-contained HTML file. Save the page; there are no stylesheets or scripts to lose." } },
+      { "@type": "Question", "name": "How do I report an error in a guide?",
+        "acceptedAnswer": { "@type": "Answer", "text": "Use the report link in the guide's footer, or email support. Include the section heading so we can find the passage." } } ] }
+  </script>
+</head>
+<body>
+  <a href="#main">Skip to main content</a>
+  <header>
+    <p><span translate="no">Field Guide</span> Support</p>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="index.html">All examples</a></li>
+      </ul>
+    </nav>
+    <search>
+      <form action="/search" method="get">
+        <label for="q">Search the help center</label>
+        <input type="search" id="q" name="q" placeholder="e.g. offline reading">
+        <button type="submit">Search</button>
+      </form>
+    </search>
+  </header>
+  <main id="main">
+    <article>
+      <header>
+        <h1>Help Center</h1>
+        <p>Everything on this page — the accordion, the definition popovers, the
+        notice — works with <strong>zero JavaScript</strong>.</p>
+      </header>
+
+      <dialog open>
+        <p><strong>Scheduled maintenance:</strong> search will be unavailable
+        <time datetime="2026-07-26T02:00Z">Sunday 02:00–04:00 UTC</time>.
+        A <code>&lt;dialog open&gt;</code> renders without script; the button below
+        closes it via <code>form method="dialog"</code>.</p>
+        <form method="dialog">
+          <button>Got it</button>
+        </form>
+      </dialog>
+
+      <section aria-labelledby="results-h">
+        <h2 id="results-h">Example search result</h2>
+        <p>When results render, the matched phrase is highlighted with
+        <code>&lt;mark&gt;</code> — relevance, not decoration: …every guide is a
+        single self-contained HTML file. Save the page for
+        <mark>offline reading</mark>; there are no stylesheets…</p>
+      </section>
+
+      <section aria-labelledby="faq-h">
+        <h2 id="faq-h">Frequently asked questions</h2>
+        <p>The three entries share <code>name="faq"</code>, making them a mutually
+        exclusive accordion — opening one closes the others, courtesy of the browser:</p>
+
+        <details name="faq" open>
+          <summary>Do I need an account to read the guides?</summary>
+          <p>No. Every guide is public. An account only stores your reading
+          position across devices.</p>
+        </details>
+        <details name="faq">
+          <summary>Can I download guides for offline use?</summary>
+          <p>Yes — every guide is a single self-contained HTML file. Save the page;
+          there are no stylesheets or scripts to lose. See the note on
+          <button type="button" popovertarget="pop-selfcontained">self-contained
+          pages</button>.</p>
+        </details>
+        <details name="faq">
+          <summary>How do I report an error in a guide?</summary>
+          <p>Use the report link in the guide's footer, or email
+          <a href="mailto:support@html-tags.com">support@html-tags.com</a>. Include the
+          section heading so we can find the passage.</p>
+        </details>
+      </section>
+
+      <div id="pop-selfcontained" popover>
+        <p><dfn>Self-contained page</dfn>: a document whose images are data URIs and
+        whose only script is JSON-LD metadata — nothing external to break. Press
+        <kbd>Esc</kbd> or click outside to dismiss this popover; the browser handles
+        both.</p>
+      </div>
+
+      <section aria-labelledby="contact-h">
+        <h2 id="contact-h">Still stuck?</h2>
+        <address>
+          Field Guide Support ·
+          <a href="mailto:support@html-tags.com">support@html-tags.com</a>
+        </address>
+        <p>We answer within <time datetime="P2D">two business days</time>.</p>
+      </section>
+    </article>
+  </main>
+  <footer>
+    <p><small>© <time datetime="2026">2026</time> Field Guide.
+    Back to <a href="index.html">all examples</a>.</small></p>
+  </footer>
+</body>
+</html>
