@@ -26,13 +26,6 @@
         <li><a href="index.html">All examples</a></li>
       </ul>
     </nav>
-    <search>
-      <form action="/search" method="get">
-        <label for="q">Search the help center</label>
-        <input type="search" id="q" name="q" placeholder="e.g. offline reading">
-        <button type="submit">Search</button>
-      </form>
-    </search>
   </header>
   <main id="main">
     <article>
@@ -41,6 +34,19 @@
         <p>Everything on this page — the accordion, the definition popovers, the
         notice — works with <strong>zero JavaScript</strong>.</p>
       </header>
+
+      <search aria-labelledby="search-h">
+        <h2 id="search-h">Search the help center</h2>
+        <p><strong>Note:</strong> this form is a demonstration of the
+        <code>&lt;search&gt;</code> landmark — it is <em>not</em> wired to a
+        search backend, so submitting it goes nowhere useful. The markup is
+        the demonstration.</p>
+        <form action="https://html-tags.com/search" method="get">
+          <label for="q">Search terms</label>
+          <input type="search" id="q" name="q" placeholder="e.g. offline reading">
+          <button type="submit">Search</button>
+        </form>
+      </search>
 
       <dialog open>
         <p><strong>Scheduled maintenance:</strong> search will be unavailable
